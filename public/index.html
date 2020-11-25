@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>test</title>
+    <meta charset="utf-8" />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="investForm">
+      <p>Инвестировать сейчас</p>
+      <hr noshade />
+      <div class="line">
+        <div class="fix fix2">
+          <div class="item">Сумма инвестиции</div>
+          <br />
+          <div class="item">Мультипликатор</div>
+        </div>
+        <div class="fix fix2 investmentData">
+           
+          <div class="item"><input type="text" class="sumInv" value="5000" required pattern="[0-9]{,2}" /></div>
+          <label class="signDollar1">$</label>
+          <div class="item">
+            <input type="text" class="mult" value="40" required pattern="[0-9]{,2}" /><label class="signMult">x</label>
+            <label class="investment">= $200 000</label>
+          </div>
+        </div>
+      </div>
+      <div class="spoiler">
+        <details>
+          <summary><span class="greyText">Ограничить прибыль и убыток</span></summary>
+          <div class="line">
+            <div class="fix2 fix3 formCheckbox">
+              <div class="item">Ограничения в</div>
+              <div class="item">
+                <input type="checkbox" id="profit" name="chk" value="profit_i" /><label for="profit">Прибыль</label>
+              </div>
+
+              <div class="item">
+                <input type="checkbox" id="loss" name="chk" value="loss_i" /><label for="loss">Убыток</label>
+              </div>
+            </div>
+            <div class="fix2 fix3">
+              <div class="item formRadio">
+                <input id="percent" name="restrictions" type="radio" value="%" /><label for="percent">%</label>
+                <input id="dollar" name="restrictions" type="radio" value="$" checked /><label for="dollar">$</label>
+              </div>
+              <div class="item">
+                <input type="number" class="profit_i" disabled /> <label class="signRestr" id="makeSign1">$</label>
+                <button class="b1" disabled type="button"></button><button class="b2" disabled type="button"></button>
+              </div>
+              <div class="item">
+                <input type="number" class="loss_i" disabled /> <label class="signRestr" id="makeSign2">$</label
+                ><button class="b3" disabled type="button"></button><button class="b4" disabled type="button"></button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="line">
+        <div class="item">
+          <button class="reduction lightRed" type="submit">
+            <div class="btnDark darkRed"><img src="./images/Arrow.png" /></div>
+            <div class="btnText">В снижение</div>
+          </button>
+        </div>
+        <div class="item">
+          <button class="growth lightGreen" type="submit">
+            <div class="btnDark darkGreen"><img src="./images/Arrow.png" /></div>
+            <div class="btnText">В рост</div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="errorMessageSum">
+      <div class="errMsg1">Минимальная сумма инвестиции <span class="errUnderline">$ 100</span></div>
+      <div class="errMsg2"></div>
+    </div>
+    <div id="errorMessageMult">
+      <div class="errMsg1">Неверное значение мультипликатора</div>
+      <div class="errMsg2"></div>
+    </div>
+    <div id="errorMessageProfit">
+      <div class="errMsg1">Не может быть меньше <label class="msgProfit errUnderline">$ 1000</label></div>
+      <div class="errMsg2"></div>
+    </div>
+    <div id="errorMessageLoss">
+      <div class="errMsg1">Не может быть <label class="msgLoss errUnderline">$ 1000</label></div>
+
+      <div class="errMsg2"></div>
+    </div>
+    <div id="customSlider">
+      <div class="CS1">
+        <div class="sliderWrap">
+          <input type="range" min="1" max="40" value="40" step="1" class="slider" id="myRange" />
+          <div class="customPart"></div>
+        </div>
+        <div class="sliderWrap">
+          <div class="one">1</div>
+          <div class="five">5</div>
+          <div class="twenty">20</div>
+          <div class="fourty">40</div>
+        </div>
+      </div>
+      <div class="CS2"></div>
+    </div>
+
+    <script src="./index.js" defer></script>
+  </body>
+</html>
